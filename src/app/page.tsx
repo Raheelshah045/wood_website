@@ -372,7 +372,7 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-6 rv d3">
               {[
                 { number: "500+", label: "Projects Completed" },
-                { number: "10+", label: "Years Experience" },
+                { number: "20+", label: "Years Experience" },
                 { number: "100%", label: "Client Satisfaction" },
                 { number: "∞", label: "Design Possibilities" },
               ].map((stat, i) => (
