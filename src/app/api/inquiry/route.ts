@@ -60,8 +60,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: validation.error }, { status: 400 });
     }
 
-    // 2. Determine target submit URL: priority to FORM_SUBMIT_URL env var, then fallback to business email
-    const formSubmitUrl = process.env.FORM_SUBMIT_URL || "https://formsubmit.co/ajax/ahmedwoodart66@gmail.com";
+    // 2. Determine target submit URL: priority to FORM_SUBMIT_URL env var, then fallback to Formspree
+    const formSubmitUrl = process.env.FORM_SUBMIT_URL || "https://formspree.io/f/xwvznljw";
 
     // 3. Forward submission to the external form submit service
     const serviceResponse = await forwardToFormService(validation.data, formSubmitUrl);
