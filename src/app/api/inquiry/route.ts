@@ -1,9 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { connectToDatabase } from "@/lib/db";
-import Inquiry from "@/models/Inquiry";
 
-// Define input validation schema
+// Zod schema for validating the incoming contact form submission.
 const InquiryInputSchema = z.object({
   name: z.string().min(1, "Name is required").max(100, "Name is too long"),
   email: z.string().email("Invalid email address"),
@@ -11,50 +9,71 @@ const InquiryInputSchema = z.object({
   message: z.string().min(5, "Message must be at least 5 characters").max(1000, "Message is too long"),
 });
 
+type InquiryInput = z.infer<typeof InquiryInputSchema>;
+
+/**
+ * Validate incoming request payload.
+ */
+function validateInput(body: unknown): { success: true; data: InquiryInput } | { success: false; error: string } {
+  const parseResult = InquiryInputSchema.safeParse(body);
+  if (!parseResult.success) {
+    const errorMsg = parseResult.error.issues.map((issue) => issue.message).join(", ");
+    return { success: false, error: `Validation error: ${errorMsg}` };
+  }
+  return { success: true, data: parseResult.data };
+}
+
+/**
+ * Forward form submission to an external form submit service.
+ */
+async function forwardToFormService(data: InquiryInput, serviceUrl: string) {
+  const response = await fetch(serviceUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+    },
+    body: JSON.stringify({
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      message: data.message,
+      _subject: `New Wood Art Inquiry from ${data.name}`,
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(errorText || `Form service responded with status ${response.status}`);
+  }
+
+  return response.json().catch(() => ({}));
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    // Validate body shape and content with Zod schema
-    const parseResult = InquiryInputSchema.safeParse(body);
-    if (!parseResult.success) {
-      const errorMsg = parseResult.error.issues.map((issue) => issue.message).join(", ");
-      return NextResponse.json(
-        { error: `Validation error: ${errorMsg}` },
-        { status: 400 }
-      );
+    // 1. Validate the form input
+    const validation = validateInput(body);
+    if (!validation.success) {
+      return NextResponse.json({ error: validation.error }, { status: 400 });
     }
 
-    const { name, email, phone, message } = parseResult.data;
+    // 2. Determine target submit URL: priority to FORM_SUBMIT_URL env var, then fallback to business email
+    const formSubmitUrl = process.env.FORM_SUBMIT_URL || "https://formsubmit.co/ajax/ahmedwoodart66@gmail.com";
 
-    // Connect to database
-    await connectToDatabase();
+    // 3. Forward submission to the external form submit service
+    const serviceResponse = await forwardToFormService(validation.data, formSubmitUrl);
 
-    // Create database entry
-    const newInquiry = await Inquiry.create({
-      name,
-      email,
-      phone,
-      message,
+    return NextResponse.json({
+      success: true,
+      message: "Your inquiry has been submitted successfully.",
+      data: serviceResponse,
     });
-
-    return NextResponse.json(
-      {
-        success: true,
-        message: "Inquiry saved successfully",
-        data: {
-          id: newInquiry._id,
-          name: newInquiry.name,
-          email: newInquiry.email,
-        },
-      },
-      { status: 201 }
-    );
   } catch (error: unknown) {
     const errorMessage = error instanceof Error ? error.message : "An unexpected server error occurred";
-    return NextResponse.json(
-      { error: errorMessage },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }
+
