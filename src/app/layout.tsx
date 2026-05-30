@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Cormorant_Garamond, Bebas_Neue } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
@@ -54,8 +57,14 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${playfairDisplay.variable} ${cormorantGaramond.variable} ${bebasNeue.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <CustomCursor />
+        <Header />
+        <main className="flex-grow flex flex-col">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -5,6 +5,9 @@ export interface IInquiry extends Document {
   email: string;
   phone: string;
   message: string;
+  projectType: string;
+  timeline: string;
+  imageUrl?: string;
   createdAt: Date;
 }
 
@@ -29,6 +32,20 @@ const InquirySchema: Schema<IInquiry> = new Schema(
     message: {
       type: String,
       required: [true, "Message is required"],
+      trim: true,
+    },
+    projectType: {
+      type: String,
+      required: [true, "Project type is required"],
+      enum: ["residential", "commercial", "art_commission", "other"],
+    },
+    timeline: {
+      type: String,
+      required: [true, "Timeline is required"],
+      enum: ["urgent", "3months", "flexible"],
+    },
+    imageUrl: {
+      type: String,
       trim: true,
     },
   },

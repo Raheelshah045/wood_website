@@ -248,3 +248,8 @@ body {
 .animate-arrow-bounce {
   animation: arrowBounce 2s ease-in-out infinite;
 }
+
+.logo-wrap {
+  perspective: 900px;
+}
+
