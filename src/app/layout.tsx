@@ -28,7 +28,7 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "Ahmed Wood Art – Rooted in Quality. Built for Life.",
+  title: "Ahmed Woodart | Custom Carpentry & Wood Design",
   description: "Handcrafted kitchens, wardrobes, and bespoke interiors in Karachi. Premium furniture and high-quality woodwork made to last generations.",
   keywords: [
     "Ahmed Wood Art",

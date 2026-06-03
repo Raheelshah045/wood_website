@@ -13,6 +13,10 @@ import imgWardrobeFloral from "../../../public/images/wardrobe-floral.png";
 import imgWardrobeDiamond from "../../../public/images/wardrobe-diamond.jpg";
 import imgCabinetMaroon from "../../../public/images/cabinet-maroon.jpg";
 import imgWardrobeFloralDetail from "../../../public/images/wardrobe-floral-detail.jpg";
+import imgKitchenBlackGold from "../../../public/images/kitchen-black-gold.jpg";
+import imgBedDoubleGold from "../../../public/images/bed-double-gold.jpg";
+import imgBedLuxuryBeige from "../../../public/images/bed-luxury-beige.jpg";
+
 
 const projects = [
   {
@@ -87,6 +91,30 @@ const projects = [
     desc: "Detailed close-up showing custom hand-carved floral woodwork and gold leaf accents.",
     delay: "d2",
   },
+  {
+    id: "project_10",
+    title: "Black & Gold Marble Kitchen",
+    img: imgKitchenBlackGold,
+    category: "residential",
+    desc: "Premium modular kitchen cabinetry with custom black marble front panels, golden vein highlights, and soft-close mechanisms.",
+    delay: "",
+  },
+  {
+    id: "project_11",
+    title: "Royal Diamond Tufted Bed",
+    img: imgBedDoubleGold,
+    category: "residential",
+    desc: "Bespoke double bed featuring white leatherette diamond tufting, polished dark wood frame, and detailed gold-leaf trim borders.",
+    delay: "d1",
+  },
+  {
+    id: "project_12",
+    title: "Luxury Upholstered Bed Unit",
+    img: imgBedLuxuryBeige,
+    category: "residential",
+    desc: "Custom high-back upholstered bed in premium beige fabric, complete with matching side tables and integrated reading lamps.",
+    delay: "d2",
+  },
 ];
 
 export default function PortfolioPage() {
@@ -156,7 +184,7 @@ export default function PortfolioPage() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects
           .filter((item) => selectedCategory === "all" || item.category === selectedCategory)
-          .map((item) => (
+          .map((item, index) => (
             <div
               key={item.id}
               className={`gi relative overflow-hidden group aspect-square bg-brand-deepbrown rv ${item.delay}`}
@@ -168,6 +196,7 @@ export default function PortfolioPage() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-750 ease-out"
                 placeholder="blur"
+                priority={index < 3}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-espresso/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end p-6">
                 <span className="font-playfair text-lg text-brand-bg font-semibold">{item.title}</span>

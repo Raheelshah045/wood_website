@@ -9,6 +9,10 @@ import logoImg from "../../public/logo.png";
 import imgKitchenMarble from "../../public/images/kitchen-marble.png";
 import imgWardrobeRustic from "../../public/images/wardrobe-rustic.png";
 import imgDressingTable from "../../public/images/dressing-table.png";
+import imgKitchenBlackGold from "../../public/images/kitchen-black-gold.jpg";
+import imgBedDoubleGold from "../../public/images/bed-double-gold.jpg";
+import imgBedLuxuryBeige from "../../public/images/bed-luxury-beige.jpg";
+
 
 const featuredProjects = [
   {
@@ -17,6 +21,27 @@ const featuredProjects = [
     img: imgKitchenMarble,
     category: "Residential",
     desc: "Custom modular kitchen cabinetry with premium marble finish laminates.",
+  },
+  {
+    id: "project_10",
+    title: "Black & Gold Marble Kitchen",
+    img: imgKitchenBlackGold,
+    category: "Residential",
+    desc: "Premium modular kitchen cabinetry with custom black marble front panels, golden vein highlights.",
+  },
+  {
+    id: "project_11",
+    title: "Royal Diamond Tufted Bed",
+    img: imgBedDoubleGold,
+    category: "Residential",
+    desc: "Bespoke double bed featuring white leatherette diamond tufting, polished dark wood frame.",
+  },
+  {
+    id: "project_12",
+    title: "Luxury Upholstered Bed Unit",
+    img: imgBedLuxuryBeige,
+    category: "Residential",
+    desc: "Custom high-back upholstered bed in premium beige fabric.",
   },
   {
     id: "project_02",

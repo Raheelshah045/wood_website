@@ -308,6 +308,11 @@ export default function ContactPage() {
               onChange={handleFileChange}
               className="w-full px-4 py-3 bg-white/60 border border-brand-copper/20 text-brand-espresso focus:border-brand-copper focus:bg-white focus:outline-none transition-colors duration-300 file:mr-4 file:py-1.5 file:px-3.5 file:border-0 file:text-xs file:font-semibold file:bg-brand-copper/20 file:text-brand-copper hover:file:bg-brand-copper/30 file:cursor-pointer"
             />
+            {selectedFile && (
+              <p className="text-xs text-brand-copper font-medium mt-1">
+                ✓ {selectedFile.name} attached
+              </p>
+            )}
           </div>
 
           {submitStatus && (

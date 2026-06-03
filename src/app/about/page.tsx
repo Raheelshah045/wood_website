@@ -6,7 +6,7 @@ import Link from "next/link";
 import logoImg from "../../../public/logo.png";
 
 const stats = [
-  { value: "10+", label: "Years of Craft" },
+  { value: "20+", label: "Years of Craft" },
   { value: "500+", label: "Projects Completed" },
   { value: "100%", label: "Custom Built" },
   { value: "5★", label: "Client Satisfaction" },

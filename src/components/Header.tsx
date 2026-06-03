@@ -34,8 +34,11 @@ export default function Header() {
 
   // Close mobile menu on route change
   useEffect(() => {
-    setIsMobileOpen(false);
-  }, [pathname]);
+    if (isMobileOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setIsMobileOpen(false);
+    }
+  }, [pathname, isMobileOpen]);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -98,6 +101,7 @@ export default function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
+                  aria-current={isActive ? "page" : undefined}
                   className={`no-underline text-[0.78rem] tracking-[3px] uppercase font-semibold transition-colors duration-300 relative
                     after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:h-[1.5px] after:bg-brand-copper
                     hover:after:w-full after:transition-all after:duration-350
@@ -157,6 +161,7 @@ export default function Header() {
             >
               <Link
                 href={link.href}
+                aria-current={pathname === link.href ? "page" : undefined}
                 className={`font-bebas text-[2.2rem] tracking-[8px] no-underline transition-colors duration-300 ${
                   pathname === link.href
                     ? "text-brand-copper"
