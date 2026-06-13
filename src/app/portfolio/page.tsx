@@ -16,6 +16,8 @@ import imgWardrobeFloralDetail from "../../../public/images/wardrobe-floral-deta
 import imgKitchenBlackGold from "../../../public/images/kitchen-black-gold.jpg";
 import imgBedDoubleGold from "../../../public/images/bed-double-gold.jpg";
 import imgBedLuxuryBeige from "../../../public/images/bed-luxury-beige.jpg";
+import imgCabinetChevron from "../../../public/images/cabinet-chevron.jpg";
+import imgPetHouse from "../../../public/images/pet-house.png";
 
 
 const projects = [
@@ -114,6 +116,22 @@ const projects = [
     category: "residential",
     desc: "Custom high-back upholstered bed in premium beige fabric, complete with matching side tables and integrated reading lamps.",
     delay: "d2",
+  },
+  {
+    id: "project_13",
+    title: "Chevron Corner Cabinet",
+    img: imgCabinetChevron,
+    category: "residential",
+    desc: "Bespoke corner showcase cabinet featuring a handcrafted chevron-patterned wood veneer facade and integrated display section.",
+    delay: "",
+  },
+  {
+    id: "project_14",
+    title: "Custom Two-Tier Pet House",
+    img: imgPetHouse,
+    category: "art_commissions",
+    desc: "Bespoke two-level wooden pet residence featuring a peaked roof, solid wood structural frame, and wire mesh panels.",
+    delay: "d1",
   },
 ];
 
