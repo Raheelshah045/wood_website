@@ -82,6 +82,19 @@ export default function Home() {
     };
   }, []);
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `translateY(-7px) rotateX(${-y * 10}deg) rotateY(${x * 10}deg)`;
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    card.style.transform = "";
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -314,7 +327,10 @@ export default function Home() {
           ].map((srv, index) => (
             <div
               key={index}
-              className="p-8 border border-brand-copper/20 bg-white/40 relative overflow-hidden transition-all duration-400 group hover:border-brand-copper hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-walnut/10 rv"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              className="p-8 border border-brand-copper/20 bg-white/40 relative overflow-hidden transition-all duration-400 group hover:border-brand-copper hover:shadow-lg hover:shadow-brand-walnut/10 rv"
+              style={{ transformStyle: "preserve-3d" }}
             >
               <span className="text-3xl mb-4 block">{srv.icon}</span>
               <h3 className="font-playfair text-xl font-bold text-brand-espresso mb-2">{srv.title}</h3>
