@@ -15,17 +15,21 @@ import imgBedLuxuryBeige from "../../public/images/bed-luxury-beige.jpg";
 import imgWardrobeFloral from "../../public/images/wardrobe-floral.png";
 import imgWardrobeDiamond from "../../public/images/wardrobe-diamond.jpg";
 import imgArchedSlidingDoor from "../../public/images/arched-sliding-door.jpg";
+import imgCabinetChevron from "../../public/images/cabinet-chevron.jpg";
+import imgAestheticDoor from "../../public/images/Aesthatic-Door.png";
+import imgNewKitchenCabinets from "../../public/images/New-kitchen-cabinets.png";
+import imgSmallWardrobe from "../../public/images/small-wardrobe.png";
 
 const heroSlides = [
   {
     id: "slide_01",
-    imgSrc: imgArchedSlidingDoor,
-    alt: "Arched Wooden Sliding Door Partition custom installation by Ahmed Wood Art",
+    imgSrc: imgAestheticDoor,
+    alt: "Aesthetic White Arched Double Door entrance custom installation by Ahmed Wood Art",
   },
   {
     id: "slide_02",
-    imgSrc: imgKitchenMarble,
-    alt: "Modern Marble-Finish Custom Kitchen cabinetry by Ahmed Wood Art",
+    imgSrc: imgNewKitchenCabinets,
+    alt: "Premium Modular Marble-Finish Kitchen cabinets custom installation by Ahmed Wood Art",
   },
   {
     id: "slide_03",
@@ -51,11 +55,46 @@ const heroSlides = [
 
 const featuredProjects = [
   {
+    id: "project_16",
+    title: "Royal Arched Double Door",
+    img: imgAestheticDoor,
+    category: "Residential",
+    desc: "Bespoke solid wood white arched double doors featuring delicate shadows cast by custom overhead floral vine placements.",
+  },
+  {
+    id: "project_17",
+    title: "Marble Textured Kitchen Cabinets",
+    img: imgNewKitchenCabinets,
+    category: "Residential",
+    desc: "Luxury custom kitchen cabinetry featuring seamless marble texture laminate fronts and integrated premium cooktop alignment.",
+  },
+  {
+    id: "project_18",
+    title: "Golden Mesh Glass Cabinet",
+    img: imgSmallWardrobe,
+    category: "Residential",
+    desc: "Handcrafted burled walnut storage showcase featuring custom golden geometric pattern mesh inserts and premium metal handle accents.",
+  },
+  {
+    id: "project_15",
+    title: "Arched Sliding Door Partition",
+    img: imgArchedSlidingDoor,
+    category: "Residential",
+    desc: "Bespoke solid wood arched entrance partition featuring integrated sliding glass doors.",
+  },
+  {
     id: "project_01",
     title: "Marble Finish Kitchen",
     img: imgKitchenMarble,
     category: "Residential",
     desc: "Custom modular kitchen cabinetry with premium marble finish laminates.",
+  },
+  {
+    id: "project_13",
+    title: "Chevron Corner Cabinet",
+    img: imgCabinetChevron,
+    category: "Residential",
+    desc: "Bespoke corner showcase cabinet featuring a handcrafted chevron-patterned wood veneer facade.",
   },
   {
     id: "project_10",
@@ -71,35 +110,9 @@ const featuredProjects = [
     category: "Residential",
     desc: "Bespoke double bed featuring white leatherette diamond tufting, polished dark wood frame.",
   },
-  {
-    id: "project_12",
-    title: "Luxury Upholstered Bed Unit",
-    img: imgBedLuxuryBeige,
-    category: "Residential",
-    desc: "Custom high-back upholstered bed in premium beige fabric.",
-  },
-  {
-    id: "project_02",
-    title: "Bespoke Boardroom Table",
-    img: imgWardrobeRustic,
-    category: "Commercial",
-    desc: "Custom solid wood conference table with integrated connectivity.",
-  },
-  {
-    id: "project_03",
-    title: "Dressing Table Unit",
-    img: imgDressingTable,
-    category: "Residential",
-    desc: "Premium wood vanity dressing table featuring a custom illuminated mirror.",
-  },
-  {
-    id: "project_15",
-    title: "Arched Sliding Door Partition",
-    img: imgArchedSlidingDoor,
-    category: "Residential",
-    desc: "Bespoke solid wood arched entrance partition featuring integrated sliding glass doors.",
-  },
 ];
+
+
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -232,6 +245,7 @@ export default function Home() {
             </a>
           </div>
         </div>
+
         
         {/* Scroll Indicator */}
         <div className="absolute bottom-9 left-1/2 -translate-x-1/2 text-brand-white/80 text-[0.62rem] tracking-[4px] uppercase flex flex-col items-center gap-2 select-none animate-fade-up z-30">
@@ -427,6 +441,7 @@ export default function Home() {
             </div>
           ))}
         </div>
+
       </section>
 
       {/* Services Specialties */}

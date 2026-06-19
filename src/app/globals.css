@@ -280,7 +280,47 @@ body {
   .kb-active {
     animation: none !important;
   }
+  .animate-float {
+    animation: none !important;
+    transform: none !important;
+  }
 }
 /* END: Premium Cinematic Hero Slider Changes */
 
+/* Floating animation for showcase cards */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
 
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+
+
+/* Portfolio grid card entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-card {
+  animation: fadeInUp 0.38s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-card {
+    animation: none !important;
+  }
+}

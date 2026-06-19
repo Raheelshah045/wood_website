@@ -19,135 +19,143 @@ import imgBedLuxuryBeige from "../../../public/images/bed-luxury-beige.jpg";
 import imgCabinetChevron from "../../../public/images/cabinet-chevron.jpg";
 import imgPetHouse from "../../../public/images/pet-house.png";
 import imgArchedSlidingDoor from "../../../public/images/arched-sliding-door.jpg";
-
+import imgAestheticDoor from "../../../public/images/Aesthatic-Door.png";
+import imgNewKitchenCabinets from "../../../public/images/New-kitchen-cabinets.png";
+import imgSmallWardrobe from "../../../public/images/small-wardrobe.png";
 
 const projects = [
   {
-    id: "project_01",
-    title: "Marble Finish Kitchen",
-    img: imgKitchenMarble,
-    category: "residential",
-    desc: "Custom modular kitchen cabinetry with premium marble finish laminates designed for modern luxury homes.",
-    delay: "",
+    id: "project_16",
+    title: "Royal Arched Double Door",
+    img: imgAestheticDoor,
+    category: ["doors"],
+    desc: "Bespoke solid wood white arched double doors featuring delicate shadows cast by custom overhead floral vine placements.",
   },
   {
-    id: "project_02",
-    title: "Bespoke Walnut Boardroom Table",
-    img: imgWardrobeRustic,
-    category: "commercial",
-    desc: "Custom solid wood conference table with integrated connectivity for modern corporate office spaces.",
-    delay: "d1",
+    id: "project_17",
+    title: "Marble Textured Kitchen Cabinets",
+    img: imgNewKitchenCabinets,
+    category: ["kitchen_cabinets"],
+    desc: "Luxury custom kitchen cabinetry featuring seamless marble texture laminate fronts and integrated premium cooktop alignment.",
   },
   {
-    id: "project_03",
-    title: "Dressing Table Unit",
-    img: imgDressingTable,
-    category: "residential",
-    desc: "Premium wood vanity dressing table featuring a custom illuminated mirror and smart drawer dividers.",
-    delay: "d2",
-  },
-  {
-    id: "project_04",
-    title: "Premium Office Credenza",
-    img: imgPremiumBed,
-    category: "commercial",
-    desc: "Luxury office sideboard crafted with grain-matched walnut veneer and custom brass hardware.",
-    delay: "d1",
-  },
-  {
-    id: "project_05",
-    title: "Log Texture Paneling",
-    img: imgWardrobeLog,
-    category: "commercial",
-    desc: "Bespoke accent wall paneling with realistic log-grain texture for upscale retail and lobbies.",
-    delay: "d2",
-  },
-  {
-    id: "project_06",
-    title: "Floral Glass Wardrobe",
-    img: imgWardrobeFloral,
-    category: "residential",
-    desc: "Floor-to-ceiling bedroom wardrobe with custom floral glass panels and integrated LED lighting.",
-    delay: "d3",
-  },
-  {
-    id: "project_07",
-    title: "Diamond Mirror Wardrobe",
-    img: imgWardrobeDiamond,
-    category: "residential",
-    desc: "Elegant custom wardrobe featuring diamond-patterned mirrored doors and velvet-lined drawer systems.",
-    delay: "",
-  },
-  {
-    id: "project_08",
-    title: "Maroon Floral Cabinet",
-    img: imgCabinetMaroon,
-    category: "art_commissions",
-    desc: "Bespoke hand-carved storage cabinet with deep maroon floral laminate inlays and vintage brass legs.",
-    delay: "d1",
-  },
-  {
-    id: "project_09",
-    title: "Floral Wood Art Detail",
-    img: imgWardrobeFloralDetail,
-    category: "art_commissions",
-    desc: "Detailed close-up showing custom hand-carved floral woodwork and gold leaf accents.",
-    delay: "d2",
-  },
-  {
-    id: "project_10",
-    title: "Black & Gold Marble Kitchen",
-    img: imgKitchenBlackGold,
-    category: "residential",
-    desc: "Premium modular kitchen cabinetry with custom black marble front panels, golden vein highlights, and soft-close mechanisms.",
-    delay: "",
-  },
-  {
-    id: "project_11",
-    title: "Royal Diamond Tufted Bed",
-    img: imgBedDoubleGold,
-    category: "residential",
-    desc: "Bespoke double bed featuring white leatherette diamond tufting, polished dark wood frame, and detailed gold-leaf trim borders.",
-    delay: "d1",
-  },
-  {
-    id: "project_12",
-    title: "Luxury Upholstered Bed Unit",
-    img: imgBedLuxuryBeige,
-    category: "residential",
-    desc: "Custom high-back upholstered bed in premium beige fabric, complete with matching side tables and integrated reading lamps.",
-    delay: "d2",
-  },
-  {
-    id: "project_13",
-    title: "Chevron Corner Cabinet",
-    img: imgCabinetChevron,
-    category: "residential",
-    desc: "Bespoke corner showcase cabinet featuring a handcrafted chevron-patterned wood veneer facade and integrated display section.",
-    delay: "",
-  },
-  {
-    id: "project_14",
-    title: "Custom Two-Tier Pet House",
-    img: imgPetHouse,
-    category: "art_commissions",
-    desc: "Bespoke two-level wooden pet residence featuring a peaked roof, solid wood structural frame, and wire mesh panels.",
-    delay: "d1",
+    id: "project_18",
+    title: "Golden Mesh Glass Cabinet",
+    img: imgSmallWardrobe,
+    category: ["wardrobes"],
+    desc: "Handcrafted burled walnut storage showcase featuring custom golden geometric pattern mesh inserts and premium metal handle accents.",
   },
   {
     id: "project_15",
     title: "Arched Wooden Sliding Door Partition",
     img: imgArchedSlidingDoor,
-    category: "residential",
+    category: ["doors"],
     desc: "Bespoke solid wood arched partition featuring elegant integrated multi-pane sliding glass doors.",
-    delay: "d2",
+  },
+  {
+    id: "project_01",
+    title: "Marble Finish Kitchen",
+    img: imgKitchenMarble,
+    category: ["kitchen_cabinets"],
+    desc: "Custom modular kitchen cabinetry with premium marble finish laminates designed for modern luxury homes.",
+  },
+  {
+    id: "project_13",
+    title: "Chevron Corner Cabinet",
+    img: imgCabinetChevron,
+    category: ["kitchen_cabinets"],
+    desc: "Bespoke corner showcase cabinet featuring a handcrafted chevron-patterned wood veneer facade and integrated display section.",
+  },
+  {
+    id: "project_10",
+    title: "Black & Gold Marble Kitchen",
+    img: imgKitchenBlackGold,
+    category: ["kitchen_cabinets"],
+    desc: "Premium modular kitchen cabinetry with custom black marble front panels, golden vein highlights, and soft-close mechanisms.",
+  },
+  {
+    id: "project_02",
+    title: "Bespoke Walnut Wardrobe",
+    img: imgWardrobeRustic,
+    category: ["wardrobes"],
+    desc: "Custom solid wood wardrobe with rich walnut finish and integrated connectivity for modern living spaces.",
+  },
+  {
+    id: "project_03",
+    title: "Dressing Table Unit",
+    img: imgDressingTable,
+    category: ["wardrobes"],
+    desc: "Premium wood vanity dressing table featuring a custom illuminated mirror and smart drawer dividers.",
+  },
+  {
+    id: "project_04",
+    title: "Premium Upholstered Bed",
+    img: imgPremiumBed,
+    category: ["beds"],
+    desc: "Luxury upholstered bed crafted with grain-matched walnut veneer and custom brass hardware accents.",
+  },
+  {
+    id: "project_05",
+    title: "Log Texture Panel Wardrobe",
+    img: imgWardrobeLog,
+    category: ["wardrobes"],
+    desc: "Bespoke accent wardrobe with realistic log-grain texture for upscale bedroom and lobby spaces.",
+  },
+  {
+    id: "project_06",
+    title: "Floral Glass Wardrobe",
+    img: imgWardrobeFloral,
+    category: ["wardrobes"],
+    desc: "Floor-to-ceiling bedroom wardrobe with custom floral glass panels and integrated LED lighting.",
+  },
+  {
+    id: "project_07",
+    title: "Diamond Mirror Wardrobe",
+    img: imgWardrobeDiamond,
+    category: ["wardrobes"],
+    desc: "Elegant custom wardrobe featuring diamond-patterned mirrored doors and velvet-lined drawer systems.",
+  },
+  {
+    id: "project_08",
+    title: "Maroon Floral Cabinet",
+    img: imgCabinetMaroon,
+    category: ["others"],
+    desc: "Bespoke hand-carved storage cabinet with deep maroon floral laminate inlays and vintage brass legs.",
+  },
+  {
+    id: "project_09",
+    title: "Floral Wood Art Detail",
+    img: imgWardrobeFloralDetail,
+    category: ["others"],
+    desc: "Detailed close-up showing custom hand-carved floral woodwork and gold leaf accents.",
+  },
+  {
+    id: "project_11",
+    title: "Royal Diamond Tufted Bed",
+    img: imgBedDoubleGold,
+    category: ["beds"],
+    desc: "Bespoke double bed featuring white leatherette diamond tufting, polished dark wood frame, and detailed gold-leaf trim borders.",
+  },
+  {
+    id: "project_12",
+    title: "Luxury Upholstered Bed Unit",
+    img: imgBedLuxuryBeige,
+    category: ["beds"],
+    desc: "Custom high-back upholstered bed in premium beige fabric, complete with matching side tables and integrated reading lamps.",
+  },
+  {
+    id: "project_14",
+    title: "Custom Two-Tier Pet House",
+    img: imgPetHouse,
+    category: ["others"],
+    desc: "Bespoke two-level wooden pet residence featuring a peaked roof, solid wood structural frame, and wire mesh panels.",
   },
 ];
 
 export default function PortfolioPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  // Intersection Observer for scroll-reveal animations
+  // Intersection Observer for scroll-reveal animations (static heading elements only)
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -161,13 +169,14 @@ export default function PortfolioPage() {
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
+    // Only observe static heading elements — grid cards use fade-in-card CSS instead
     const revealElements = document.querySelectorAll(".rv");
     revealElements.forEach((el) => observer.observe(el));
 
-    return () => {
-      revealElements.forEach((el) => observer.unobserve(el));
-    };
+    return () => observer.disconnect();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
 
   return (
     <>
@@ -190,12 +199,15 @@ export default function PortfolioPage() {
         <div className="flex flex-wrap gap-3 rv d2">
           {[
             { id: "all", name: "All" },
-            { id: "residential", name: "Residential" },
-            { id: "commercial", name: "Commercial" },
-            { id: "art_commissions", name: "Art Pieces" },
+            { id: "wardrobes", name: "Wardrobes" },
+            { id: "kitchen_cabinets", name: "Kitchen Cabinets" },
+            { id: "beds", name: "Beds" },
+            { id: "doors", name: "Doors" },
+            { id: "others", name: "Others" },
           ].map((cat) => (
             <button
               key={cat.id}
+              id={`filter-${cat.id}`}
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-5 py-2 text-xs uppercase tracking-[2px] font-bebas transition-all duration-300 border ${
                 selectedCategory === cat.id
@@ -210,18 +222,22 @@ export default function PortfolioPage() {
       </div>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects
-          .filter((item) => selectedCategory === "all" || item.category === selectedCategory)
+          .filter((item) => {
+            if (selectedCategory === "all") return true;
+            return item.category.includes(selectedCategory);
+          })
           .map((item, index) => (
             <div
-              key={item.id}
-              className={`gi relative overflow-hidden group aspect-square bg-brand-deepbrown rv ${item.delay}`}
+              key={`${selectedCategory}-${item.id}`}
+              style={{ animationDelay: `${index * 60}ms` }}
+              className="gi relative overflow-hidden group aspect-square bg-brand-deepbrown fade-in-card"
             >
               <Image
                 src={item.img}
                 alt={item.desc}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-750 ease-out"
+                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 placeholder="blur"
                 priority={index < 3}
               />
@@ -232,6 +248,8 @@ export default function PortfolioPage() {
             </div>
           ))}
       </div>
+
+
       </section>
 
       {/* Featured Case Studies */}
