@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,7 +12,42 @@ import imgDressingTable from "../../public/images/dressing-table.png";
 import imgKitchenBlackGold from "../../public/images/kitchen-black-gold.jpg";
 import imgBedDoubleGold from "../../public/images/bed-double-gold.jpg";
 import imgBedLuxuryBeige from "../../public/images/bed-luxury-beige.jpg";
+import imgWardrobeFloral from "../../public/images/wardrobe-floral.png";
+import imgWardrobeDiamond from "../../public/images/wardrobe-diamond.jpg";
+import imgArchedSlidingDoor from "../../public/images/arched-sliding-door.jpg";
 
+const heroSlides = [
+  {
+    id: "slide_01",
+    imgSrc: imgArchedSlidingDoor,
+    alt: "Arched Wooden Sliding Door Partition custom installation by Ahmed Wood Art",
+  },
+  {
+    id: "slide_02",
+    imgSrc: imgKitchenMarble,
+    alt: "Modern Marble-Finish Custom Kitchen cabinetry by Ahmed Wood Art",
+  },
+  {
+    id: "slide_03",
+    imgSrc: imgBedLuxuryBeige,
+    alt: "Luxury Tufted Bedroom Bed Unit by Ahmed Wood Art",
+  },
+  {
+    id: "slide_04",
+    imgSrc: imgWardrobeDiamond,
+    alt: "Diamond Mirror Wardrobe with elegant finishes by Ahmed Wood Art",
+  },
+  {
+    id: "slide_05",
+    imgSrc: imgKitchenBlackGold,
+    alt: "Premium Black and Gold Modular Kitchen by Ahmed Wood Art",
+  },
+  {
+    id: "slide_06",
+    imgSrc: imgWardrobeRustic,
+    alt: "Bespoke Walnut Boardroom Table and Workspace woodwork by Ahmed Wood Art",
+  }
+];
 
 const featuredProjects = [
   {
@@ -57,9 +92,25 @@ const featuredProjects = [
     category: "Residential",
     desc: "Premium wood vanity dressing table featuring a custom illuminated mirror.",
   },
+  {
+    id: "project_15",
+    title: "Arched Sliding Door Partition",
+    img: imgArchedSlidingDoor,
+    category: "Residential",
+    desc: "Bespoke solid wood arched entrance partition featuring integrated sliding glass doors.",
+  },
 ];
 
 export default function Home() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 6000);
+    return () => clearInterval(slideInterval);
+  }, []);
+
   // Intersection Observer for scroll-reveal animations
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -97,7 +148,104 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero Section */}
+      {/* ========================================================================= */}
+      {/* NEW PREMIUM CINEMATIC HERO SECTION WITH SLIDESHOW & OVERLAYS */}
+      {/* ========================================================================= */}
+      <section
+        id="home"
+        className="hero min-h-screen flex items-center justify-center relative overflow-hidden bg-brand-deepbrown py-28 px-4"
+      >
+        {/* Background Slideshow */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {heroSlides.map((slide, index) => {
+            const isActive = index === activeSlide;
+            return (
+              <div
+                key={slide.id}
+                className={`absolute inset-0 transition-opacity duration-1500 ease-in-out ${
+                  isActive ? "opacity-100 z-10" : "opacity-0 z-0"
+                }`}
+              >
+                {/* Ken Burns zooming wrapper when active */}
+                <Image
+                  src={slide.imgSrc}
+                  alt={slide.alt}
+                  fill
+                  priority={index === 0}
+                  sizes="100vw"
+                  className={`object-cover object-center kb-slide ${
+                    isActive ? "kb-active" : ""
+                  }`}
+                  placeholder="blur"
+                />
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Tactile Wood Grain Overlay Pattern on top of backgrounds */}
+        <div className="absolute inset-0 wood-grain pointer-events-none z-20 opacity-30 mix-blend-overlay" />
+
+        {/* Subtle Dark Overlay Gradient for high text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-brand-espresso/90 pointer-events-none z-20" />
+        
+        {/* Glow pulse overlay */}
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-radial from-brand-copper/15 to-transparent top-1/2 left-1/2 glow-pulse pointer-events-none z-20" />
+
+        {/* Content Container */}
+        <div className="relative z-30 text-center max-w-4xl mx-auto">
+          <Image
+            src={logoImg}
+            alt="Ahmed Wood Art"
+            width={110}
+            height={110}
+            className="rounded-full object-cover border-3 border-brand-copper shadow-lg shadow-brand-copper/25 mx-auto mb-7 animate-pop-in"
+            placeholder="blur"
+          />
+          <div className="inline-block font-bebas tracking-[7px] text-[0.72rem] text-brand-copper-lt border border-brand-copper/35 px-6 py-1.5 mb-7 animate-fade-up">
+            Premium Furniture &amp; Woodwork — Karachi
+          </div>
+          <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl font-black leading-none text-brand-white mb-4 animate-fade-up">
+            Ahmed<br />
+            <span className="italic font-normal text-brand-copper-lt block mt-2">Wood Art</span>
+          </h1>
+          <p className="font-playfair italic text-xl md:text-2xl text-[#ebdcd0] tracking-wide mb-3 animate-fade-up">
+            &ldquo;Rooted in Quality. Built for Life.&rdquo;
+          </p>
+          <p className="text-base md:text-lg font-light tracking-wide text-[#dfd5c6] max-w-lg mx-auto mb-10 animate-fade-up">
+            Designing architectural statements and functional wood art tailored for premium environments.
+          </p>
+          <div className="flex flex-wrap gap-5 justify-center items-center animate-fade-up">
+            <Link
+              href="/portfolio"
+              className="px-9 py-3.5 bg-brand-copper text-brand-white font-bebas tracking-[3px] text-[0.95rem] hover:bg-brand-walnut hover:-translate-y-[3px] hover:shadow-lg hover:shadow-brand-walnut/30 transition-all duration-300 no-underline"
+            >
+              View Portfolio
+            </Link>
+            <a
+              href="https://wa.me/923172568882"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-9 py-3.5 border-1.5 border-brand-copper/70 text-brand-white font-bebas tracking-[3px] text-[0.95rem] hover:bg-brand-copper hover:text-brand-white hover:-translate-y-[3px] transition-all duration-300 no-underline bg-black/10 backdrop-blur-sm"
+            >
+              WhatsApp Us
+            </a>
+          </div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-9 left-1/2 -translate-x-1/2 text-brand-white/80 text-[0.62rem] tracking-[4px] uppercase flex flex-col items-center gap-2 select-none animate-fade-up z-30">
+          <span>Scroll</span>
+          <svg width="14" height="22" viewBox="0 0 14 22" fill="none" className="animate-arrow-bounce">
+            <path d="M7 0v18M1 12l6 8 6-8" stroke="currentColor" strokeWidth="1.4" />
+          </svg>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* ORIGINAL LIGHT HERO SECTION (COMMENTED OUT FOR REVERSIBILITY) */}
+      {/* ========================================================================= */}
+      {/*
       <section
         id="home"
         className="hero min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#d9cab0] via-[#e8dcc8] to-[#cfc0a4] wood-grain py-28 px-4"
@@ -149,6 +297,7 @@ export default function Home() {
           </svg>
         </div>
       </section>
+      */}
 
       {/* Infinite Marquee Specialties */}
       <div className="overflow-hidden bg-brand-espresso py-3.5 border-y border-brand-copper/10 select-none">

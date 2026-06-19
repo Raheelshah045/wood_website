@@ -15,7 +15,7 @@ const navLinks = [
 ];
 
 // Pages whose hero section has a DARK background — header text must be white
-const darkHeroPages = ["/portfolio"];
+const darkHeroPages = ["/portfolio", "/"];
 
 export default function Header() {
   const [isNavSolid, setIsNavSolid] = useState(false);

@@ -18,6 +18,7 @@ import imgBedDoubleGold from "../../../public/images/bed-double-gold.jpg";
 import imgBedLuxuryBeige from "../../../public/images/bed-luxury-beige.jpg";
 import imgCabinetChevron from "../../../public/images/cabinet-chevron.jpg";
 import imgPetHouse from "../../../public/images/pet-house.png";
+import imgArchedSlidingDoor from "../../../public/images/arched-sliding-door.jpg";
 
 
 const projects = [
@@ -132,6 +133,14 @@ const projects = [
     category: "art_commissions",
     desc: "Bespoke two-level wooden pet residence featuring a peaked roof, solid wood structural frame, and wire mesh panels.",
     delay: "d1",
+  },
+  {
+    id: "project_15",
+    title: "Arched Wooden Sliding Door Partition",
+    img: imgArchedSlidingDoor,
+    category: "residential",
+    desc: "Bespoke solid wood arched partition featuring elegant integrated multi-pane sliding glass doors.",
+    delay: "d2",
   },
 ];
 
