@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Cormorant_Garamond, Bebas_Neue } from "next/font/google";
+import { Playfair_Display, Cormorant_Garamond, Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -20,10 +20,11 @@ const cormorantGaramond = Cormorant_Garamond({
   display: "swap",
 });
 
-const bebasNeue = Bebas_Neue({
+const josefinSans = Josefin_Sans({
   variable: "--font-bebas",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["300", "400", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -56,7 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfairDisplay.variable} ${cormorantGaramond.variable} ${bebasNeue.variable} h-full antialiased`}
+      className={`${playfairDisplay.variable} ${cormorantGaramond.variable} ${josefinSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">

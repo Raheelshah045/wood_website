@@ -33,6 +33,32 @@
   --font-bebas: var(--font-bebas), sans-serif;
 }
 
+/* ─── Josefin Sans refinements (replaces Bebas Neue on buttons / nav) ─── */
+/* Josefin Sans is already geometric and elegant — reduce letter-spacing
+   and keep proper casing so text is readable at every size. */
+.font-bebas {
+  font-family: var(--font-bebas), sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;   /* much tighter than the old 3–7px Bebas tracking */
+  text-transform: uppercase;
+}
+
+/* Large decorative uses (stats numbers, hero labels) keep condensed feel */
+.font-bebas.text-5xl,
+.font-bebas.text-4xl,
+.font-bebas.text-3xl,
+.font-bebas.text-2xl,
+.font-bebas.text-xl {
+  letter-spacing: 0.05em;
+}
+
+/* ─── Nav link font override ─── */
+nav .font-bebas {
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
