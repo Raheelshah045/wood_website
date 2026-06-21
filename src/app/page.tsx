@@ -116,10 +116,14 @@ const featuredProjects = [
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [prevSlide, setPrevSlide] = useState<number | null>(null);
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+      setActiveSlide((prev) => {
+        setPrevSlide(prev);
+        return (prev + 1) % heroSlides.length;
+      });
     }, 6000);
     return () => clearInterval(slideInterval);
   }, []);
@@ -172,6 +176,10 @@ export default function Home() {
         <div className="absolute inset-0 z-0 pointer-events-none">
           {heroSlides.map((slide, index) => {
             const isActive = index === activeSlide;
+            const isPrev = index === prevSlide;
+
+            if (!isActive && !isPrev) return null;
+
             return (
               <div
                 key={slide.id}
@@ -214,6 +222,7 @@ export default function Home() {
             height={110}
             className="rounded-full object-cover border-3 border-brand-copper shadow-lg shadow-brand-copper/25 mx-auto mb-7 animate-pop-in"
             placeholder="blur"
+            priority
           />
           <div className="inline-block font-bebas tracking-[7px] text-[0.72rem] text-brand-copper-lt border border-brand-copper/35 px-6 py-1.5 mb-7 animate-fade-up">
             Premium Furniture &amp; Woodwork — Karachi
