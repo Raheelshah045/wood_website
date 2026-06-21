@@ -4,24 +4,24 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import imgKitchenMarble from "../../../public/images/kitchen-marble.png";
-import imgWardrobeRustic from "../../../public/images/wardrobe-rustic.png";
-import imgDressingTable from "../../../public/images/dressing-table.png";
-import imgPremiumBed from "../../../public/images/premium-bed.png";
-import imgWardrobeLog from "../../../public/images/wardrobe-log.png";
-import imgWardrobeFloral from "../../../public/images/wardrobe-floral.png";
-import imgWardrobeDiamond from "../../../public/images/wardrobe-diamond.jpg";
-import imgCabinetMaroon from "../../../public/images/cabinet-maroon.jpg";
-import imgWardrobeFloralDetail from "../../../public/images/wardrobe-floral-detail.jpg";
-import imgKitchenBlackGold from "../../../public/images/kitchen-black-gold.jpg";
-import imgBedDoubleGold from "../../../public/images/bed-double-gold.jpg";
-import imgBedLuxuryBeige from "../../../public/images/bed-luxury-beige.jpg";
-import imgCabinetChevron from "../../../public/images/cabinet-chevron.jpg";
-import imgPetHouse from "../../../public/images/pet-house.png";
-import imgArchedSlidingDoor from "../../../public/images/arched-sliding-door.jpg";
-import imgAestheticDoor from "../../../public/images/Aesthatic-Door.png";
-import imgNewKitchenCabinets from "../../../public/images/New-kitchen-cabinets.png";
-import imgSmallWardrobe from "../../../public/images/small-wardrobe.png";
+import imgKitchenMarble from "../../../public/images/kitchen-marble.webp";
+import imgWardrobeRustic from "../../../public/images/wardrobe-rustic.webp";
+import imgDressingTable from "../../../public/images/dressing-table.webp";
+import imgPremiumBed from "../../../public/images/premium-bed.webp";
+import imgWardrobeLog from "../../../public/images/wardrobe-log.webp";
+import imgWardrobeFloral from "../../../public/images/wardrobe-floral.webp";
+import imgWardrobeDiamond from "../../../public/images/wardrobe-diamond.webp";
+import imgCabinetMaroon from "../../../public/images/cabinet-maroon.webp";
+import imgWardrobeFloralDetail from "../../../public/images/wardrobe-floral-detail.webp";
+import imgKitchenBlackGold from "../../../public/images/kitchen-black-gold.webp";
+import imgBedDoubleGold from "../../../public/images/bed-double-gold.webp";
+import imgBedLuxuryBeige from "../../../public/images/bed-luxury-beige.webp";
+import imgCabinetChevron from "../../../public/images/cabinet-chevron.webp";
+import imgPetHouse from "../../../public/images/pet-house.webp";
+import imgArchedSlidingDoor from "../../../public/images/arched-sliding-door.webp";
+import imgAestheticDoor from "../../../public/images/Aesthatic-Door.webp";
+import imgNewKitchenCabinets from "../../../public/images/New-kitchen-cabinets.webp";
+import imgSmallWardrobe from "../../../public/images/small-wardrobe.webp";
 
 const projects = [
   {

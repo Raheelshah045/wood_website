@@ -5,20 +5,20 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Static imports for asset optimization and layout shift prevention
-import logoImg from "../../public/logo.png";
-import imgKitchenMarble from "../../public/images/kitchen-marble.png";
-import imgWardrobeRustic from "../../public/images/wardrobe-rustic.png";
-import imgDressingTable from "../../public/images/dressing-table.png";
-import imgKitchenBlackGold from "../../public/images/kitchen-black-gold.jpg";
-import imgBedDoubleGold from "../../public/images/bed-double-gold.jpg";
-import imgBedLuxuryBeige from "../../public/images/bed-luxury-beige.jpg";
-import imgWardrobeFloral from "../../public/images/wardrobe-floral.png";
-import imgWardrobeDiamond from "../../public/images/wardrobe-diamond.jpg";
-import imgArchedSlidingDoor from "../../public/images/arched-sliding-door.jpg";
-import imgCabinetChevron from "../../public/images/cabinet-chevron.jpg";
-import imgAestheticDoor from "../../public/images/Aesthatic-Door.png";
-import imgNewKitchenCabinets from "../../public/images/New-kitchen-cabinets.png";
-import imgSmallWardrobe from "../../public/images/small-wardrobe.png";
+import logoImg from "../../public/logo.webp";
+import imgKitchenMarble from "../../public/images/kitchen-marble.webp";
+import imgWardrobeRustic from "../../public/images/wardrobe-rustic.webp";
+import imgDressingTable from "../../public/images/dressing-table.webp";
+import imgKitchenBlackGold from "../../public/images/kitchen-black-gold.webp";
+import imgBedDoubleGold from "../../public/images/bed-double-gold.webp";
+import imgBedLuxuryBeige from "../../public/images/bed-luxury-beige.webp";
+import imgWardrobeFloral from "../../public/images/wardrobe-floral.webp";
+import imgWardrobeDiamond from "../../public/images/wardrobe-diamond.webp";
+import imgArchedSlidingDoor from "../../public/images/arched-sliding-door.webp";
+import imgCabinetChevron from "../../public/images/cabinet-chevron.webp";
+import imgAestheticDoor from "../../public/images/Aesthatic-Door.webp";
+import imgNewKitchenCabinets from "../../public/images/New-kitchen-cabinets.webp";
+import imgSmallWardrobe from "../../public/images/small-wardrobe.webp";
 
 const heroSlides = [
   {

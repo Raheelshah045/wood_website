@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import logoImg from "../../public/logo.png";
+import logoImg from "../../public/logo.webp";
 
 const navLinks = [
   { href: "/", label: "Home" },

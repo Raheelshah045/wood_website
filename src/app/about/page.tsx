@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logoImg from "../../../public/logo.png";
+import logoImg from "../../../public/logo.webp";
 
 const stats = [
   { value: "20+", label: "Years of Craft" },
